@@ -1,0 +1,15 @@
+<div class="flex justify-between items-center bg-sky-50 shadow-lg rounded-3xl py-1 px-1">
+    <span class="mx-2 text-sky-950 flex-wrap" [attr.myAttribute]="todo.isDone"
+        [ngClass]="{ 'line-through text-sky-200': todo.isDone === true }">{{ todo.task }}</span>
+    <div class="flex text-sm">
+        <button [attr.myAttribute]="todo.isDone"
+        [ngClass]="{ 'bg-green-200': todo.isDone === true }" class="px-3 py-1 text-white rounded-l-2xl bg-green-400" type="text"
+        (click)="doneHandler(todo)">
+            DONE
+        </button>
+        <button class="disabled:bg-red-100 px-3 py-1 text-white rounded-r-2xl bg-red-400" type="text" value="DELETE"
+        (click)="deleteHandler(todo)">
+            DELETE
+        </button>
+    </div>
+</div>
